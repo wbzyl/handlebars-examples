@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang=pl>
+<head>
+  <meta charset=utf-8>
+  <title>Using compiled Handlebar templates</title>
+  <style>
+    body { background: #E2DF9A; font-size: 24px; }
+  </style>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="js/handlebars.runtime.js"></script>
+  <script src="js/templates.js"></script>
+  <script>
+    var context = {title: "My New Post", body: "This is my first post!"}
+    var result = Handlebars.templates.person(context);
+
+    $(function() {
+      $("#entry-template").html(result);
+    });
+  </script>
+</head>
+<body>
+
+<p>Install the <i>Handlebars</i> module and compile the <i>templates/person.handlebars</i> template:
+<pre>npm install -g handlebars
+handlebars templates/ -f js/templates.js</pre>
+  <p>Download the Handlebars runtime from the <a href="https://github.com/wycats/handlebars.js/">Github</a>.
+  <hr>
+  <div id="entry-template"></div>
+  <hr>
+<p><i>Convention:</i>
+If your input file is <b>person.handlebars</b>,
+the compiler will insert it at <b>Handlebars.templates.person</b>.
+
+</body>
+</html>
