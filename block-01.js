@@ -2,14 +2,14 @@ var Handlebars = require('handlebars');
 
 var source = "{{#list people}}{{firstName}} {{lastName}}{{/list}}";
 
-Handlebars.registerHelper('list', function(items, options) {
+Handlebars.registerHelper('list', function(context, block) {
   var out = "<ul>\n";
 
-  for(var i=0, l=items.length; i<l; i++) {
-    out = out + "  <li>" + options.fn(items[i]) + "\n"
+  for(var i=0, l=context.length; i<l; i++) {
+    out = out + "  <li>" + block(context[i]) + "\n"
   }
 
-  return out + "</ul>\n";
+  return out + "</ul>";
 });
 
 var template = Handlebars.compile(source);

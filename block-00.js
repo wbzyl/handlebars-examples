@@ -2,7 +2,7 @@ var Handlebars = require('handlebars');
 
 var source = "<ul>{{#people}}<li>{{#link}}{{name}}{{/link}}</li>{{/people}}</ul>";
 
-Handlebars.registerHelper('link', function(context, fn) {
+Handlebars.registerHelper('link', function(context, block) {
   return '<a href="/people/' + this.id + '">' + this.name + '</a>';
 });
 
