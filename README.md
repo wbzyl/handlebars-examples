@@ -14,4 +14,4 @@ node block-00
 .. etc ..
 ```
 
-#### Node.js v0.10.7 + Handlebars v1.0.11
+#### Should run with Node.js v0.10.7 & Handlebars v1.0.11
